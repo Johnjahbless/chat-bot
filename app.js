@@ -25,7 +25,7 @@ app.post('/getnews', (req, res) => {
 		})
 	} else if(a.email != undefined){
 		res.json({
-			fulfillmentText: `This is your email address  + ${b}`,
+			fulfillmentText: 'https://google.com',
 			source: 'getEmail'
 		})
 	}else{
@@ -78,5 +78,5 @@ app.post('/getmovie', (req, res) => {
 })
 
 app.listen(port, () => {
-	console.log(`🌏 Server is running at http://localhost:${port}`)
+	console.log(` Server is running at http://localhost:${port}`)
 })
