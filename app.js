@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 
 app.post('/getnews', (req, res) => {
 	const a = req.body.queryResult.parameters;
+	const b = req.body.queryText;
 	if (a.movie != undefined) {
 		res.json({
 			fulfillmentText: `This is what you entered  + ${a.movie}`,
@@ -24,7 +25,7 @@ app.post('/getnews', (req, res) => {
 		})
 	} else if(a.email != undefined){
 		res.json({
-			fulfillmentText: `This is your email address  + ${a.email}`,
+			fulfillmentText: `This is your email address  + ${b}`,
 			source: 'getEmail'
 		})
 	}else{
