@@ -21,25 +21,13 @@ app.post('/getnews', (req, res) => {
 	if (a.movie != undefined) {
 		res.json({
 			fulfillmentText: `This is what you entered  + ${a.movie}`,
+			suggestionsList: ['Click here', 'Post here'],
 			source: 'getmovie'
 		})
 	} else if(a.email != undefined){
 		res.json({
-			"messages": [
-				{
-				  "buttons": [
-					{
-					  "postback": "Card Link URL or text",
-					  "text": "Card Link Title"
-					}
-				  ],
-				  "imageUrl": "http://urltoimage.com",
-				  "platform": "facebook",
-				  "subtitle": "Card Subtitle",
-				  "title": "Card Title",
-				  "type": 1
-				}
-			  ]
+			fulfillmentText: `Here is your email address ${b}`,
+		source: 'getEmail'
 		})
 	}else{
 	res.json({
