@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 app.post('/getnews', (req, res) => {
 	const a = req.body.queryResult.parameters;
-	const b = req.body.queryText;
+	const b = req.body.queryResult.queryText;
 	if (a.movie != undefined) {
 		res.json({
 			fulfillmentText: `This is what you entered  + ${a.movie}`,
