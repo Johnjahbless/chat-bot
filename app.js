@@ -16,9 +16,9 @@ app.get('/', (req, res) => {
 
 
 app.post('/getnews', (req, res) => {
-	const a = req.body.movie;
+	const a = req.body.queryResult.parameters.movie;
 	res.json({
-		fulfillmentText: `Could not get results at this time  + ${a}`,
+		fulfillmentText: `This is what you entered  + ${a}`,
 		source: 'getmovie'
 	})
 })
