@@ -16,11 +16,23 @@ app.get('/', (req, res) => {
 
 
 app.post('/getnews', (req, res) => {
-	const a = req.body.queryResult.parameters.movie;
+	const a = req.body.queryResult.parameters;
+	if (a.movie != undefined) {
+		res.json({
+			fulfillmentText: `This is what you entered  + ${a.movie}`,
+			source: 'getmovie'
+		})
+	} else if(a.email != undefined){
+		res.json({
+			fulfillmentText: `This is your email address  + ${a.email}`,
+			source: 'getEmail'
+		})
+	}else{
 	res.json({
-		fulfillmentText: `This is what you entered  + ${a}`,
+		fulfillmentText: `Can you please write that again`,
 		source: 'getmovie'
 	})
+}
 })
 
 app.post('/getmovie', (req, res) => {
